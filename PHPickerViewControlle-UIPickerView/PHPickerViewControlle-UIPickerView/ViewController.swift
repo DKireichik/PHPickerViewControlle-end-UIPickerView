@@ -10,8 +10,7 @@ import PhotosUI
 
 class ViewController: UIViewController, PHPickerViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
   
-    @IBOutlet weak var UIImageView: UIImageView!
-    
+    @IBOutlet weak var imegeView: UIImageView!
     @IBOutlet weak var pikerView: UIPickerView!
     
     lazy var pHpicker: PHPickerViewController = {
@@ -29,7 +28,7 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate, UIPicker
         
         pikerView.delegate = self
         pikerView.dataSource = self
-        UIImageView.contentMode = .scaleAspectFill
+        imegeView.contentMode = .scaleAspectFill
     }
     
     @IBAction func button (_ sender: UIButton) {
@@ -44,7 +43,7 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate, UIPicker
                            if let image = image as? UIImage {
                                self.images.append(image)
                                self.pikerView.reloadComponent(0)
-                               self.UIImageView.image = self.images.first
+                               self.imegeView.image = self.images.first
                            }
                        }
                    }
@@ -61,7 +60,7 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate, UIPicker
     }
 
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-          let pickerImage = UIKit.UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
+          let pickerImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
           pickerImage.contentMode = .scaleAspectFill
           pickerImage.clipsToBounds = true
           pickerImage.image = images[row]
@@ -72,7 +71,7 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate, UIPicker
           return 100
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-              UIImageView.image = images[row]
+              imegeView.image = images[row]
     }
       
       

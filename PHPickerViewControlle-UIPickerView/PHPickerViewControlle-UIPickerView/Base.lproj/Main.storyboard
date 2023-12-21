@@ -51,7 +51,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="UIImageView" destination="jji-4p-VhD" id="Hbq-dM-XYL"/>
+                        <outlet property="imegeView" destination="jji-4p-VhD" id="eEs-s6-mPD"/>
                         <outlet property="pikerView" destination="vrN-wc-5ud" id="TUM-ba-f6x"/>
                     </connections>
                 </viewController>
